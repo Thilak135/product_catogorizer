@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function get_query(event) {
+            event.preventDefault()
+            var query = document.getElementById('input_text').value;
+            console.log(query)
+            const resp = await fetch("/get_query", {
+                method: 'POST',
+                headers:{
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({'query': query})
+            })
+            if (resp.ok) {
+                const data = await resp.json()
+                document.getElementById("details")
+            } 
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="get_query(event)" >
+        <input type="text" name="input_text" id="input_text">
+        <input type="submit" value="Get Details">
+    </form>
+    <div id="details">
+        
+    </div>
+</body>
+</html>
