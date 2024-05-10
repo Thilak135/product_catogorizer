@@ -81,3 +81,7 @@ were i got idea to create vector embeddings for subcategory alone and store it i
 
 18) Implemented oops concepts and created instance in order to load the model only once
 
+
+### working video
+
+<div style="text-align:center"><img src="./Recording2024-05-10233828-ezgif.com-video-to-gif-converter.gif" /></div>
