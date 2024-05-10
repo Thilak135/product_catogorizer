@@ -8,13 +8,11 @@ db_chroma_path = "vectorstores/db_chroma"
 def jsonloader(file_path):
     with open(r"D:\catogorize rag\Taxonomy-Fashion.json", 'r') as file:
         data = json.load(file)
-    print(data)
 
     documents = []
     index = 1
     for i in data:
         documents.append(i["Sub-Category"])
-    print(documents)
     remove = []
     ids = []
     for dict in data:
@@ -28,7 +26,6 @@ def jsonloader(file_path):
             remove.append(temp_dict)
             ids.append(str(index))
             index += 1
-    print(remove)
     return remove,documents , ids
 
 

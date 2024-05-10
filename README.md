@@ -1,6 +1,10 @@
 # Product Catogorizer
 
 
+clone the repo 
+
+    git clone https://github.com/Thilak135/product_catogorizer.git
+
  create a virtual environment
  
     python3 -m venv venv

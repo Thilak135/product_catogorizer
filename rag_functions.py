@@ -70,12 +70,8 @@ class Ragfunctions:
         response = self.model.generate_content([
             prompt
         ])
-        # print(documents)
         result = []
-        # print(response.text)
         for i in metadatas:
-            print(i['Sub-Category'])
-            print(response.text)
             if (str(i['Sub-Category']) == (str(response.text).strip())):
                 result.append(i)
                 

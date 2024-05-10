@@ -17,19 +17,36 @@
                 body: JSON.stringify({'query': query})
             })
             if (resp.ok) {
+                const response = await resp.json()
+                const data = await response['response']
+                let detailsHTML = ''; 
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        detailsHTML += `<p><strong>${key}:</strong> ${data[key]}</p>`;
+                    }
+                }
+                document.getElementById("details").innerHTML = detailsHTML;
+            } else {
                 const data = await resp.json()
-                document.getElementById("details")
-            } 
+                alert(data.message)
+            }
         }
     </script>
 </head>
-<body>
-    <form onsubmit="get_query(event)" >
-        <input type="text" name="input_text" id="input_text">
-        <input type="submit" value="Get Details">
-    </form>
-    <div id="details">
-        
+<body style="height: 100vh; display: flex; align-items: center; justify-content:center ;">
+
+    <div>
+
+        <form onsubmit="get_query(event)" >
+            <input type="text" name="input_text" id="input_text" placeholder="Enter Product Name" style="padding-top: 7px; padding-bottom: 7px;">
+            <input type="submit" value="Get Details">
+        </form>
+
+        <div id="details">
+
+        </div>
+
     </div>
+    
 </body>
 </html>

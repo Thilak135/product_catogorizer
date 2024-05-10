@@ -12,7 +12,6 @@ def index():
 def query():
     try:
         data = request.get_json()
-        print(data)
         response = r.initiate_querying(data['query'])
         return {'status':True, 'response': response}, 200
     except Exception as e:
